@@ -1,6 +1,4 @@
 from .base_page import BasePage
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from .locators import LoginPageLocators
 from selenium.common.exceptions import NoSuchElementException
 
@@ -22,8 +20,6 @@ class LoginPage(BasePage):
         except NoSuchElementException:
             return False
         return True
-        # log_form = self.browser.find_element()
-        # assert WebDriverWait(self.browser, 10).until(EC.presence_of_all_elements_located((log_form))), "Формы логина на странице нет!"
 
     def should_be_register_form(self):
         # реализуйте проверку, что есть форма регистрации на странице
@@ -32,4 +28,3 @@ class LoginPage(BasePage):
         except NoSuchElementException:
             return False
         return True
-        # assert WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(*LoginPageLocators.register_form)), "Формы логина на странице нет!"
